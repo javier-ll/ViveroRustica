@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Jost:wght@500&family=Kanit:ital,wght@0,300;1,500&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+body {
+    font-family: Helvetica, sans-serif;
+    font-weight: 530;
+    align-items: center;
+}
+
+/* Header */
+header {
+    width: 100%;
+    overflow: hidden;
+    background: #753c73;
+    position: relative;
+    z-index: 1;
+    transition: height ease 0.5s; 
+   
+}
+
+header .logo {
+    color: #f2f2f2;
+    font-size: 3.125rem;
+    max-width: 400px;
+    line-height: 0.625rem;
+    float: left;
+}
+
+header .imagen-logo {
+    height: 25vh;
+    width: auto;
+    padding-left: 0px;
+    transition: height 0.3s ease;
+}
+
+header nav {
+    float: right;
+    line-height: 0.625rem;
+    transition: height 0.2s ease ; 
+}
+
+header nav a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.625rem 1.25rem;
+    line-height: normal;
+    font-size: 1.25rem;
+    font-family: 'Neue Helvetica Paneuropean 65 Medium', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background: #5b9362;
+    border-radius: 3.125rem;
+}
+
+.header2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: height ease 0.5s; 
+    width: 100%;
+    z-index: 999;
+    height: auto;
+}
+
+.header2 img {
+    height: 5rem;
+    width: auto;
+    transition: height ease 0.5s; /* Agregar una transición suave */
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 62.5rem;
+    margin: auto;
+    overflow: hidden;
+    align-items: center; /* Centra verticalmente */
+    display: flex;
+    justify-content: space-between; /* Espacio entre la imagen y el menú */
+}
+
+header img,
+.header2 img {
+    margin: 1rem 0 1rem 0; /* Margen de 1rem tanto arriba como abajo de la imagen */
+}
+
+/* Inicio*/
+#Inicio {
+    position: relative;
+    text-align: center;
+    background-color: rgb(158, 181, 162);
+    padding-top: 0rem;
+    z-index: 2;
+  }
+  
+  .contenedor-imagen-frase {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ancho deseado del contenedor */
+    height: 15vh; /* Alto deseado del contenedor */
+    padding-bottom: 200px;
+    /* overflow: hidden; Recorta cualquier contenido que se salga del contenedor */
+    background-color: rgba(155, 188, 159, 0.5);
+  }
+  .contenedor-imagen-frase img{
+    width: 100%; /* Toma el 100% del ancho del contenedor */
+    height: 30vh;
+    object-fit: cover; /* Recorta la imagen para ajustarse al contenedor */   
+  }
+  
+  .frase {
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 3rem;
+    font-weight: 999;
+    position: absolute;
+    top: 50%; /* Ajusta la posición verticalmente */
+    left: 50%; /* Ajusta la posición horizontalmente */
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: #8b1969; /* Color del texto */
+    border-radius: 10px; /* Redondea los bordes del contenedor */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombreado al texto */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+/* Aplicar márgenes al contenido principal para evitar superposiciones */
+.Carrusel{
+    margin: 0;
+    padding: 0;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(155, 188, 159, 0.5);
+    z-index: 5;
+}
+.Carrusel .slider{
+    width: 800px;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.Carrusel .slide{
+    width: 500%;
+    overflow-x: auto;
+    height: 500px;
+    display: flex;
+}
+.Carrusel .slide input{
+    display: none;
+}
+.st\ first, .st {
+    position: relative;
+    display: inline-block;
+  }
+  
+.Carrusel .texto {
+    position: absolute;
+    top: 76%;
+    left: 35%;
+    padding: 0px 5px 0px 5px;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: rgba(72, 159, 83, 0.5);
+}
+
+.st{
+    width: 20%;
+    transition: 2s;
+}
+.st img{
+    width: 800px;
+    height: 500px;
+}
+.Carrusel .nav-m{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    justify-content: center;
+    display: flex;
+}
+.m-btn{
+    border: 2px solid #5b9362;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.m-btn:not(:last-child){
+    margin-right: 30px;
+}
+.m-btn:hover{
+    background-color: #5b9362;
+}
+#radio1:checked ~.first{
+    margin-left: 0;
+}
+#radio2:checked ~.first{
+    margin-left: -20%;
+}
+#radio3:checked ~.first{
+    margin-left: -40%;
+}
+.Carrusel .nav-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 460px;
+    display: flex;
+    justify-content: center;
+}
+.Carrusel .nav-auto div{
+    border: 2px solid #5b9362;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+.Carrusel .nav-auto div:not(:last-child){
+    margin-right: 30px;
+    justify-content: center;
+}
+#radio1:checked ~.nav-auto .a-b1{
+    background-color: #5b9362;
+}
+#radio2:checked ~.nav-auto .a-b2{
+    background-color: #5b9362;
+}
+#radio3:checked ~.nav-auto .a-b3{
+    background-color: #5b9362;
+}
+
+@media screen and (max-width: 1024px) {
+    header nav a {
+        font-size: 1.44rem;
+    }
+
+    #Inicio .frase {
+        font-size: 4rem;
+      }
+    .contenedor-imagen-frase {
+        width: 100%; /* Ancho deseado del contenedor */
+        height: 30vh;
+        padding-bottom: 2rem;
+    }
+    .Carrusel{
+        height: 55vh;
+    }
+    .Carrusel img {
+        height: 49vh;
+    }
+    .Carrusel .slider{
+        height: 50vh;
+    }
+    .Carrusel .nav-auto {
+        margin-top: 49.5vh;
+    }
+    .Carrusel .slide{
+        height: 56vh;
+    }
+    .Carrusel .texto {
+        font-size: 2.5rem;
+        top: 12.5rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    /* Estilo general del header */
+header {
+    width: 100%;
+    overflow: hidden;
+    background: #753c73;
+    position: relative;
+    z-index: 1;
+    transition: height ease 0.5s; 
+}
+
+/* Estilo del logo */
+header .logo {
+    color: #f2f2f2;
+    font-size: 3.125rem;
+    display: inline-block;
+    max-width: 90%; /* Ajuste para dispositivos móviles */
+    line-height: 1.5; /* Ajuste para dispositivos móviles */
+    float: none; /* Evitar flotar en dispositivos móviles */
+    margin: 10px auto; /* Centrar en dispositivos móviles */
+}
+
+/* Estilo de la imagen del logo */
+header .imagen-logo {
+    height: 20vh;
+    width: auto; /* Ocupar el ancho completo del contenedor */
+    padding-left: 0;
+    transition: height 0.3s ease;
+}
+
+/* Estilo de la navegación */
+header nav {
+    float: none; /* Evitar flotar en dispositivos móviles */
+    text-align: center; /* Centrar en dispositivos móviles */
+    font-size: 3.125rem;
+    padding-bottom: 10px;
+}
+
+/* Estilo de los enlaces de navegación */
+header nav a {
+    display: inline-block; /* Convertir a bloques para ocupar el ancho completo */
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.625rem 0; /* Ajustar el relleno en dispositivos móviles */
+    font-size: 1.5rem;
+    font-family: 'Neue Helvetica Paneuropean 65 Medium', sans-serif;
+    /* transition: all 0.3s ease; */
+}
+
+/* Estilo al pasar el mouse sobre los enlaces de navegación */
+header nav a:hover {
+    background: #5b9362;
+    border-radius: 0; /* Eliminar el borde redondeado en dispositivos móviles */
+}
+
+/* Estilo del header fijo */
+.header2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: height ease 0.5s; 
+    width: 100%;
+    z-index: 999;
+    height: auto;
+}
+
+/* Estilo de la imagen dentro del header fijo */
+.header2 img {
+    height: 15vh; /* Reducir la altura para dispositivos móviles */
+    width: auto;
+    transition: height ease 0.5s; /* Agregar una transición suave */
+}
+
+/* Estilo del wrapper general */
+.wrapper {
+    width: 90%;
+    max-width: 100%; /* Ocupar el ancho completo del contenedor padre */
+    margin: auto;
+    overflow: hidden;
+    align-items: center; /* Centra verticalmente */
+    display: flex;
+    flex-direction: column; /* Cambiar a dirección de columna para dispositivos móviles */
+}
+
+/* Margen de la imagen en dispositivos móviles */
+header img,
+.header2 img {
+    margin: 1rem 0; /* Margen de 1rem arriba y abajo de la imagen en dispositivos móviles */
+}
+
+}
+
+@media screen and (max-width: 950px) {
+    header nav a {
+        font-size: 3.5rem;
+    }
+
+    /* Inicio*/
+    #Inicio .frase{
+        font-size: 6rem;
+    }
+    .contenedor-imagen-frase {
+        width: 100%; /* Ancho deseado del contenedor */
+        height: 33vh;
+        padding-bottom: 2rem;
+    }
+
+    .Carrusel{
+        height: 35vh;
+    }
+    .Carrusel img {
+        max-width: 100%;
+        height: 30vh;
+    }
+    .Carrusel .slider{
+        max-width: 80%;
+        height: 35vh;
+    }
+    .Carrusel .nav-m, .Carrusel .nav-auto{
+        width: 88%;
+    }
+    .Carrusel .nav-auto{
+        margin-top: 27.5vh;
+    }
+    .Carrusel .slide{
+        height: 31vh;
+    }
+    .Carrusel .st {
+        flex: 0 0 auto;
+      }
+    .Carrusel .texto {
+        font-size: 3.3rem;
+        top:20vh;
+    }
+   
+}
+
+@media screen and (max-width: 540px){
+    header nav a{
+        font-size: 3.5rem;
+    }
+
+    #Inicio .frase {
+        font-size: 4rem;
+    }
+    .contenedor-imagen-frase {
+        width: 100%;  /*Ancho deseado del contenedor*/
+        height: 53vh;
+    }
+    .contenedor-imagen-frase img {
+        width: 100%;
+        height: 46vh;
+        object-fit: cover;
+    }
+
+    .Carrusel{
+        height:63vh;
+    }
+    .Carrusel img {
+        height: 49vh;
+    }
+    .Carrusel .slider{
+        max-width: 80%;
+        height: 50vh;
+    }
+    .Carrusel .slide{
+        height: 52vh;
+    }
+    .Carrusel .nav-auto{
+        margin-top: 46.5vh;
+    }
+    .Carrusel .texto {
+        font-size: 2.3rem;
+        top: 38vh;
+    }
+}
+
+@media screen and (max-width: 430px){
+    #Inicio .frase {
+        font-size: 3.5rem;
+    }
+    .Carrusel .slide{
+        height: 51vh;
+    }
+}
+
+@media screen and (max-width: 390px){
+    #Inicio .frase {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 280px){
+    header nav a{
+        font-size: 1.5rem;
+    }
+    .contenedor-imagen-frase {
+        padding-top: 5rem;
+    }
+    #Inicio .frase {
+        font-size: 2.3rem;
+    }
+
+    .Carrusel{
+        height:64vh;
+    }
+    .Carrusel .slider {
+        max-width: 80%;
+        height: 42vh;
+    }
+    .Carrusel .slide {
+        height: 42vh;
+    }
+    .Carrusel .nav-auto {
+        margin-top: 35.7vh;
+    }
+    .Carrusel .texto {
+        font-size: 2rem;
+        top: 22vh;
+    }
+}

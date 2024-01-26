@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quienes.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/productos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contacto_footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/header.js' %}"></script>
+    <script src="{% static 'js/contacto.js' %}"></script>
+    <title>Rústica Vivero de Montaña</title>
+    <link rel="icon" href="{% static 'imagenes/vivero_pestaña.jpg' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img class="imagen-logo" src="{% static 'imagenes/vivero_logo.jpg' %}" alt="Logo de vivero">
+            </div>
+            <nav>
+                <a href="#Inicio">Inicio</a>
+                <a href="#titulo_productos">Productos</a>
+                <a href="#Quienes_somos">Quiénes somos</a>
+                <a href="#titulo_contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <section id="Inicio">
+      <div class="contenedor-imagen-frase">
+        <img src="{% static 'imagenes/frase.jpg' %}" alt="vivero_carrusel">
+        <div class="frase">La naturaleza es el mejor diseño</div>
+      </div>
+      <section class="Carrusel">
+          <div class="slider">
+              <div class="slide">
+                  <input type="radio" name="radio-btn" id="radio1">
+                  <input type="radio" name="radio-btn" id="radio2">
+                  <input type="radio" name="radio-btn" id="radio3">
+
+                  <div class="st first">
+                      <img src="{% static 'imagenes/carrusel1.jpg' %}" alt="Imagen 1 del carrusel">
+                      <div class="texto" id="texto1">Revalorizamos la flora nativa</div>
+                  </div>
+                  <div class="st">
+                      <img src="{% static 'imagenes/carrusel2.jpg' %}" alt="Imagen 2 del carrusel">
+                      <div class="texto">Fomentamos un trabajo horizontal y autogestivo</div>
+                  </div>
+                  <div class="st">
+                      <img src="{% static 'imagenes/grindelia_chiloensis_p4178.jpg' %}" alt="Imagen 3 del carrusel">
+                      <div class="texto">Promovemos la educación ambiental a través de actividades y talleres</div>
+                  </div>
+                  <div class="st">
+                      <img src="{% static 'imagenes/plantas.jpg' %}" alt="">
+                      <div class="texto">Establecemos colaboraciones con diversas entidades y actores locales</div>
+                  </div>
+                  <div class="nav-auto">
+                      <div class="a-b1"></div>
+                      <div class="a-b2"></div>
+                      <div class="a-b3"></div>
+                  </div>
+              </div>
+
+              <div class="nav-m">
+                  <label for="radio1" class="m-btn"></label>
+                  <label for="radio2" class="m-btn"></label>
+                  <label for="radio3" class="m-btn"></label>
+              </div>
+          </div>
+      </section>
+    </section>
+    <section id="Productos">
+
+        <h1 id="titulo_productos">Productos</h1>
+        <div class="products-container">
+            {% for product in productos %}
+                <div class="product" data-name="{{ product.nombre }}">
+                    <img src="{{product.imagenURL}}" alt="Imagen de producto">
+                    <h3>{{ product.nombre }}</h3>
+                    <div class="price">${{ product.precio|floatformat:2 }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class="products-preview">
+            {% for product in productos %}
+                <div class="preview" data-target="{{ product.nombre }}">
+                    <i class="fas fa-times"></i>
+                    <img src="{{product.imagenURL}}" alt="Imagen de producto seleccionado">
+                    <h3>{{ product.nombre }}</h3>
+                    <p>{{ product.descripcion }}</p>
+                    <div class="price">${{ product.precio|floatformat:2 }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        
+      </section>
+    
+    <section id="Quienes_somos">
+        <!-- Contenido de la sección "Quiénes Somos" -->
+        <h1>Quiénes Somos</h1>
+        <div class="container">
+            <div class="columna">
+                <h2>Nuestra Historia</h2>       
+                <!-- Contenido de "¿Por qué RÚSTICA?" -->
+                <p>RUSTICA Vivero de Montaña tuvo sus inicios a principios de 2021 y surge de la mano del colectivo Sumá Nativas, quienes tienen como objetivo principal desarrollar e implementar un programa de restauración en áreas degradadas en la Cuenca Alta del Río Mendoza. Proyecto que a raíz de un devastador incendio ocurrido en 2019, acerca esta iniciativa de creación de un vivero de flora nativa en Potrerillos. Por lo tanto, el Vivero Rústica es el fruto de trabajo conjunto y la colaboración de vecinos y vecinas de Potrerillos.</p>
+                                <!-- Más contenido... -->
+                <img class="image" src="{% static 'imagenes/5vivero.jpg' %}" alt="Dueñas del vivero"> 
+            </div>
+
+            <div class="columna">
+                <img class="image" src="{% static 'imagenes/plantas.jpg' %}" alt="Plantas">               
+                <!-- Contenido de "Nuestra Historia" -->
+                <h2>¿Por qué RÚSTICA?</h2>
+                <p>Después de mucho reflexionar y debatir entre mates, llegamos a la conclusión de que este nombre refleja perfectamente nuestra pasión por las plantas autóctonas y el encanto rústico de la naturaleza y el espacio que habitamos.</p>
+            </div>
+        </div>
+    </section>
+
+    <h1 id="titulo_contacto"> Contacto </h1>
+    <section id="Contacto">
+      <div class="formulario">
+        
+        <div class="container">
+
+          <form action="https://formsubmit.co/llanojavier97@gmail.com" class="row g-3 needs-validation" method="POST">
+            
+            <div class="col-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre" name="data[nombre]" required >
+              
+              <div class="valid-feedback">
+                Todo bien
+              </div>
+              <div class="invalid-feedback">
+                Es necesario completar este campo
+              </div>
+            </div>
+
+            <div class="col-6">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" name="data[apellido]" id="apellido" class="form-control" placeholder="Escribe tu apellido" required>
+          
+              <div class="valid-feedback">
+                Todo bien
+              </div>
+
+              <div class="invalid-feedback">
+                Es necesario completar este campo
+              </div>
+
+            </div>
+           
+            <div class="col-12" class="mt-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="data[email]" id="email" class="form-control" placeholder="Escribe tu email" required >
+
+              <div class="valid-feedback">
+                No compartiremos tu correo con ninguna persona
+              </div>
+
+              <div class="invalid-feedback">
+                Es necesario completar este campo
+              </div>
+
+            </div>  
+            
+            <div class="col-6">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <input type="text" name="data[ciudad]" id="ciudad" class="form-control" placeholder="Escribe tu ciudad" required>
+
+              <div class="valid-feedback">
+                Todo bien
+              </div>
+
+              <div class="invalid-feedback">
+                Es necesario completar este campo
+              </div>
+
+            </div>
+
+            <div class="col-6">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="number" name="data[telefono]" id="telefono" class="form-control" placeholder="Escribe tu teléfono" required>
+            
+              <div class="valid-feedback">
+                Todo bien
+              </div>
+
+              <div class="invalid-feedback">
+                Es necesario completar este campo
+              </div>
+
+            </div>
+
+            <div class="col-12 mb-3">
+              <label for="Consulta" class="form-label">Dejanos tu consulta aquí</label>
+              <textarea class="form-control" name="data[consulta]" id="consulta" rows="3"></textarea>           
+            </div>
+            
+            <div class="col-12">
+              <button type="submit" class="btn-primary"> 
+                Enviar
+              </button>
+            </div>
+
+            <div class="imagen-cont">
+                <img src="{% static 'imagenes/vivero_logo.jpg' %}" alt="Logo del vivero">
+            </div>
+
+          </form>
+
+          <!-- Uso de API SheetDBio -->
+
+          <script>
+            var form = document.getElementById('sheetdb-form');
+            form.addEventListener("submit", e => {
+              e.preventDefault();
+              fetch(form.action, {
+                  method : "POST",
+                  body: new FormData(document.getElementById("sheetdb-form")),
+              }).then(
+                  response => response.json()
+              ).then((html) => {
+                // you can put any JS code here
+                alert('Listo! Gracias por comunicarte con nosotros.')
+                location.reload(); 
+              });
+            });
+          </script>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="mapa">
+          <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.0982771848458!2d-69.26561782514206!3d-33.00118437464386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967deb6088eee785%3A0x8c46e673a7b2cdbb!2sClub%20Social%20y%20Deportivo%20El%20Plata!5e0!3m2!1ses!2sar!4v1697498564456!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>  
+        </div>
+        
+        <div class="redes">
+          
+          <p class="redes2">
+            <i class="fa-solid fa-phone"></i>   <strong>261 503-6114 </strong> 
+          </p>
+          <p class="redes2">
+            <i class="fa-brands fa-instagram"></i> <a class="faceins" href="https://www.instagram.com/rustica_vivero_montana/" target="_blank" rel="noopener noreferrer" class="instagram"><strong>Rustica_vivero_montana</strong></a>
+          </p>
+          <p class="redes2">
+            <i class="fa-brands fa-facebook"> <a  class="faceins" href="https://www.facebook.com/rusticavivero" target="_blank" class="facebook"> <strong>Rustica Vivero de Montaña</strong> </a></i>  
+          </p>
+          <p class="redes2">
+            <i class="fa-solid fa-location-dot"></i>  <strong> "Club Social y Deportivo El Plata", en la intersección de la Ruta 89 y <br>  la Calle Los Negritos de las Vegas, Potrerillos, Luján de Cuyo, Mendoza.</strong> 
+          </p>
+
+        </div>
+
+        <div class="cajalogo">
+          <img class="logoimg" src="{% static 'imagenes/logoblanco.png' %}" alt="Logo blanco del vivero">
+        </div>
+
+    </footer>
+    <script src="{% static 'js/productos.js' %}"></script>
+</body>
+</html>

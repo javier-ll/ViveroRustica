@@ -1,0 +1,131 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+/* Estilos específicos para la sección "Quiénes Somos" */
+#Quienes_somos {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: rgb(158, 181, 162);
+    font-size: 1rem;
+    position: relative; /* Agregar posición relativa para permitir ajustes */
+    z-index: 1; /* Asegura que esta sección esté por encima del contenido principal */
+}
+
+#Quienes_somos h1 {
+    background-color: rgb(76, 29, 62);
+    display: table;
+    font-size:  2.5rem;
+    color: whitesmoke;
+    width: 100%;
+    padding:2rem 2rem;
+    margin:0;
+    text-align: center;
+}
+#Quienes_somos h2 {
+    margin: 0.5rem;
+}
+
+#Quienes_somos .image{
+    width: 100%;
+    height: auto;
+}
+
+#Quienes_somos p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+#Quienes_somos .container{
+    color: rgb(76, 29, 62);
+    display: table;
+    width: 96%;
+    padding: 2%;
+}
+#Quienes_somos .columna{
+    display: table-cell;
+    text-align: center;
+    width: 50%; /* Divide el contenedor en dos columnas igualmente */
+    vertical-align: top; /* Alinea el contenido en la parte superior */
+    padding: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    /* Quienes somos*/
+    #Quienes_somos h1{
+        font-size: 3.5rem;
+    }
+    #Quienes_somos h2 {
+        font-size: 3rem;
+    }
+    #Quienes_somos p {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    /* Quienes somos*/
+    #Quienes_somos h1{
+        font-size: 5.5rem;
+     }
+    #Quienes_somos .container {
+        display: block;
+        text-align: center;
+    }
+    #Quienes_somos h2 {
+        font-size: 5rem;
+    }
+    #Quienes_somos p {
+        font-size: 3rem;
+    }
+    
+    #Quienes_somos .columna {
+        display: block;
+        padding: 0;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width:540px) {
+    #Quienes_somos h2 {
+        font-size: 4rem;
+    }
+    #Quienes_somos p {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:430px) {
+    #Quienes_somos p {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    /* Quienes somos*/
+    #Quienes_somos h2 {
+        font-size: 4rem;
+    }
+    #Quienes_somos p {
+        font-size: 2.2rem;
+    }    
+}
+
+@media screen and (max-width: 375px) {
+    /* Quienes somos*/
+    #Quienes_somos h2 {
+        font-size: 3.4rem;
+    }
+    #Quienes_somos p {
+        font-size: 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 280px) {
+    /* Quienes somos*/
+    #Quienes_somos .container{
+        font-size: 2rem;
+    }
+    
+}
