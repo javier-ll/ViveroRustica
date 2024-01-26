@@ -1,2 +1,2 @@
-py -m pip install Django
+pip install Django
 pip install pillow
