@@ -20,7 +20,7 @@
     <header>
         <div class="wrapper">
             <div class="logo">
-                <img class="imagen-logo" src="{% static 'imagenes/vivero_logo.jpg' %}" alt="Logo de vivero">
+                <img class="imagen-logo" src="{% static 'imagenes/vivero_logo_header.jpg' %}" alt="Logo de vivero">
             </div>
             <nav>
                 <a href="#Inicio">Inicio</a>
@@ -73,6 +73,30 @@
           </div>
       </section>
     </section>
+    <!--<section class="Carrusel">
+    <div class="slider">
+        <div class="slide">
+            {% for carrusel in imagenes_carrusel %}
+            <input type="radio" name="radio-btn" id="radio{{ forloop.counter }}">
+            <div class="st {% if forloop.first %}first{% endif %}">
+                <img src="{{ carrusel.imagenURL }}" alt="Imagen del carrusel">
+                <div class="texto">{{ carrusel.frase_carrusel }}</div>
+            </div>
+            {% endfor %}
+            <div class="nav-auto">
+                {% for carrusel in imagenes_carrusel %}
+                <div class="a-b{{ forloop.counter }}"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="nav-m">
+            {% for carrusel in imagenes_carrusel %}
+            <label for="radio{{ forloop.counter }}" class="m-btn"></label>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+-->
     <section id="Productos">
 
         <h1 id="titulo_productos">Productos</h1>
@@ -120,119 +144,81 @@
             </div>
         </div>
     </section>
+    <!--<section id="Quienes_somos">
+    <h1>Quiénes Somos</h1>
+    <div class="container">
+        {% for subseccion in columnas_quienes %}
+        <div class="columna">
+            <img class="image" src="{{ subseccion.imagenURL }}" alt="{{ subseccion.titulo_columna }}">
+            <h2>{{ subseccion.titulo_columna }}</h2>
+            <p>{{ subseccion.texto_columna }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+-->
 
     <h1 id="titulo_contacto"> Contacto </h1>
     <section id="Contacto">
+        <!--Web3Forms-->
       <div class="formulario">
-        
         <div class="container">
-
-          <form action="https://formsubmit.co/llanojavier97@gmail.com" class="row g-3 needs-validation" method="POST">
-            
+          <form target="_blank" action="https://formsubmit.co/d9f49eff720cda2669db07b8272468a6" method="POST" id="form" class="row g-3 needs-validation">
+            <input type="hidden" name="access_key" value="9a92a731-de1b-406c-a4d2-1268ae1ef678">
+            <input type="hidden" name="subject" value="Nueva Consulta">
+            <input type="hidden" name="from_name" value="Página web de Rústica vivero">
+            <input type="hidden" name="botcheck" class="hidden" style="display: none;">
             <div class="col-6">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre" name="data[nombre]" required >
-              
-              <div class="valid-feedback">
-                Todo bien
-              </div>
-              <div class="invalid-feedback">
-                Es necesario completar este campo
-              </div>
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre" name="nombre" required>
+                <div class="valid-feedback">Todo bien</div>
+                <div class="invalid-feedback">Es necesario completar este campo</div>
             </div>
 
             <div class="col-6">
-              <label for="apellido" class="form-label">Apellido</label>
-              <input type="text" name="data[apellido]" id="apellido" class="form-control" placeholder="Escribe tu apellido" required>
-          
-              <div class="valid-feedback">
-                Todo bien
-              </div>
-
-              <div class="invalid-feedback">
-                Es necesario completar este campo
-              </div>
-
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Escribe tu apellido" required>
+                <div class="valid-feedback">Todo bien</div>
+                <div class="invalid-feedback">Es necesario completar este campo</div>
             </div>
-           
-            <div class="col-12" class="mt-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" name="data[email]" id="email" class="form-control" placeholder="Escribe tu email" required >
 
-              <div class="valid-feedback">
-                No compartiremos tu correo con ninguna persona
-              </div>
-
-              <div class="invalid-feedback">
-                Es necesario completar este campo
-              </div>
-
-            </div>  
-            
-            <div class="col-6">
-              <label for="ciudad" class="form-label">Ciudad</label>
-              <input type="text" name="data[ciudad]" id="ciudad" class="form-control" placeholder="Escribe tu ciudad" required>
-
-              <div class="valid-feedback">
-                Todo bien
-              </div>
-
-              <div class="invalid-feedback">
-                Es necesario completar este campo
-              </div>
-
+            <div class="col-12 mt-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Escribe tu email" required>
+                <div class="valid-feedback">No compartiremos tu correo con ninguna persona</div>
+                <div class="invalid-feedback">Es necesario completar este campo</div>
             </div>
 
             <div class="col-6">
-              <label for="telefono" class="form-label">Teléfono</label>
-              <input type="number" name="data[telefono]" id="telefono" class="form-control" placeholder="Escribe tu teléfono" required>
-            
-              <div class="valid-feedback">
-                Todo bien
-              </div>
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Escribe tu ciudad" required>
+                <div class="valid-feedback">Todo bien</div>
+                <div class="invalid-feedback">Es necesario completar este campo</div>
+            </div>
 
-              <div class="invalid-feedback">
-                Es necesario completar este campo
-              </div>
-
+            <div class="col-6">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Escribe tu teléfono" required>
+                <div class="valid-feedback">Todo bien</div>
+                <div class="invalid-feedback">Es necesario completar este campo</div>
             </div>
 
             <div class="col-12 mb-3">
-              <label for="Consulta" class="form-label">Dejanos tu consulta aquí</label>
-              <textarea class="form-control" name="data[consulta]" id="consulta" rows="3"></textarea>           
+                <label for="Consulta" class="form-label">Dejanos tu consulta aquí</label>
+                <textarea class="form-control" name="consulta" id="consulta" rows="3"></textarea>
             </div>
-            
+
             <div class="col-12">
-              <button type="submit" class="btn-primary"> 
-                Enviar
-              </button>
+                <button type="submit" class="btn-primary">Enviar</button>
             </div>
 
             <div class="imagen-cont">
-                <img src="{% static 'imagenes/vivero_logo.jpg' %}" alt="Logo del vivero">
+                <img src="imagenes/vivero_logo2.jpg" alt="Logo del vivero">
             </div>
-
-          </form>
-
-          <!-- Uso de API SheetDBio -->
-
-          <script>
-            var form = document.getElementById('sheetdb-form');
-            form.addEventListener("submit", e => {
-              e.preventDefault();
-              fetch(form.action, {
-                  method : "POST",
-                  body: new FormData(document.getElementById("sheetdb-form")),
-              }).then(
-                  response => response.json()
-              ).then((html) => {
-                // you can put any JS code here
-                alert('Listo! Gracias por comunicarte con nosotros.')
-                location.reload(); 
-              });
-            });
-          </script>
-
+            <div id="result"></div>
+        </form>
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
@@ -244,7 +230,7 @@
         <div class="redes">
           
           <p class="redes2">
-            <i class="fa-solid fa-phone"></i>   <strong>261 503-6114 </strong> 
+            <i class="fa-brands fa-whatsapp"></i> <a class="faceins" href="https://wa.link/9jwohj" target="_blank"><strong>+54 9 261 503 6114 </strong> 
           </p>
           <p class="redes2">
             <i class="fa-brands fa-instagram"></i> <a class="faceins" href="https://www.instagram.com/rustica_vivero_montana/" target="_blank" rel="noopener noreferrer" class="instagram"><strong>Rustica_vivero_montana</strong></a>
@@ -263,6 +249,7 @@
         </div>
 
     </footer>
+    <script src="{% static 'js/form.js' %}"></script>
     <script src="{% static 'js/productos.js' %}"></script>
 </body>
 </html>

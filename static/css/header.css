@@ -11,7 +11,7 @@ body {
 header {
     width: 100%;
     overflow: hidden;
-    background: #753c73;
+    background:#5D4A66;
     position: relative;
     z-index: 1;
     transition: height ease 0.5s; 
@@ -52,7 +52,7 @@ header nav a {
 }
 
 header nav a:hover {
-    background: #5b9362;
+    background: #749C75;
     border-radius: 3.125rem;
 }
 
@@ -91,7 +91,7 @@ header img,
 #Inicio {
     position: relative;
     text-align: center;
-    background-color: rgb(158, 181, 162);
+    background-color: #B2BD7E;
     padding-top: 0rem;
     z-index: 2;
   }
@@ -103,7 +103,7 @@ header img,
     height: 15vh; /* Alto deseado del contenedor */
     padding-bottom: 200px;
     /* overflow: hidden; Recorta cualquier contenido que se salga del contenedor */
-    background-color: rgba(155, 188, 159, 0.5);
+    background-color: #B2BD7E;
   }
   .contenedor-imagen-frase img{
     width: 100%; /* Toma el 100% del ancho del contenedor */
@@ -120,7 +120,7 @@ header img,
     left: 50%; /* Ajusta la posición horizontalmente */
     transform: translate(-50%, -50%);
     padding: 10px;
-    color: #8b1969; /* Color del texto */
+    color: #6A5D7B; /* Color del texto */
     border-radius: 10px; /* Redondea los bordes del contenedor */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombreado al texto */
     white-space: nowrap; /* Evita que el texto se divida en varias líneas */
@@ -134,7 +134,7 @@ header img,
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(155, 188, 159, 0.5);
+    background-color: #B2BD7E;
     z-index: 5;
 }
 .Carrusel .slider{
@@ -163,10 +163,10 @@ header img,
     left: 35%;
     padding: 0px 5px 0px 5px;
     transform: translate(-50%, -50%);
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.822);
     font-weight: bold;
     font-size: 1.5rem;
-    background-color: rgba(72, 159, 83, 0.5);
+    background-color: #749C75;
 }
 
 .st{
@@ -180,13 +180,13 @@ header img,
 .Carrusel .nav-m{
     position: absolute;
     width: 800px;
-    margin-top: -40px;
+    margin-top: -6.1vh;
     justify-content: center;
     display: flex;
 }
 .m-btn{
-    border: 2px solid #5b9362;
-    padding: 5px;
+    border: 2px solid #749C75;
+    padding: 0.8vh;
     border-radius: 10px;
     cursor: pointer;
     transition: 1s;
@@ -195,7 +195,7 @@ header img,
     margin-right: 30px;
 }
 .m-btn:hover{
-    background-color: #5b9362;
+    background-color: #749C75;
 }
 #radio1:checked ~.first{
     margin-left: 0;
@@ -209,13 +209,13 @@ header img,
 .Carrusel .nav-auto{
     position: absolute;
     width: 800px;
-    margin-top: 460px;
+    margin-top: 70.5vh;
     display: flex;
     justify-content: center;
 }
 .Carrusel .nav-auto div{
-    border: 2px solid #5b9362;
-    padding: 5px;
+    border: 2px solid #749C75;
+    padding: 0.8vh;
     border-radius: 10px;
     transition: 1s;
 }
@@ -224,22 +224,44 @@ header img,
     justify-content: center;
 }
 #radio1:checked ~.nav-auto .a-b1{
-    background-color: #5b9362;
+    background-color: #749C75;
 }
 #radio2:checked ~.nav-auto .a-b2{
-    background-color: #5b9362;
+    background-color: #749C75;
 }
 #radio3:checked ~.nav-auto .a-b3{
-    background-color: #5b9362;
+    background-color: #749C75;
 }
 
-@media screen and (max-width: 1024px) {
-    header nav a {
-        font-size: 1.44rem;
+@media screen and (max-width: 1280px) {
+    html {
+        font-size: 25px;
+      }
+    .Carrusel .nav-m{
+        margin-top: -5.1vh;
     }
+    .Carrusel .m-btn{
+        padding: 0.4rem;
+    }
+    .Carrusel .nav-auto div{
+        padding: 0.4rem;
+    }
+    .Carrusel .nav-auto {
+        margin-top: 57.5vh;
+    }
+}
+@media (min-height: 1360px) and (max-width: 1024px) {
+      header nav a{
+        font-size: 1.5rem;
+      }
+      .Carrusel .texto{
+        font-size: 2rem;
+      }
 
-    #Inicio .frase {
-        font-size: 4rem;
+}
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 20px;
       }
     .contenedor-imagen-frase {
         width: 100%; /* Ancho deseado del contenedor */
@@ -247,23 +269,19 @@ header img,
         padding-bottom: 2rem;
     }
     .Carrusel{
-        height: 55vh;
+        height: 75vh;
     }
     .Carrusel img {
-        height: 49vh;
+        height: 60vh;
     }
     .Carrusel .slider{
-        height: 50vh;
-    }
-    .Carrusel .nav-auto {
-        margin-top: 49.5vh;
+        height: 60vh;
     }
     .Carrusel .slide{
-        height: 56vh;
+        height: 60vh;
     }
-    .Carrusel .texto {
-        font-size: 2.5rem;
-        top: 12.5rem;
+    .Carrusel .nav-auto {
+        margin-top: 55vh;
     }
 }
 
@@ -272,7 +290,7 @@ header img,
 header {
     width: 100%;
     overflow: hidden;
-    background: #753c73;
+    background: #5D4A66;
     position: relative;
     z-index: 1;
     transition: height ease 0.5s; 
@@ -319,7 +337,7 @@ header nav a {
 
 /* Estilo al pasar el mouse sobre los enlaces de navegación */
 header nav a:hover {
-    background: #5b9362;
+    background: #749C75;
     border-radius: 0; /* Eliminar el borde redondeado en dispositivos móviles */
 }
 
@@ -357,12 +375,18 @@ header img,
 .header2 img {
     margin: 1rem 0; /* Margen de 1rem arriba y abajo de la imagen en dispositivos móviles */
 }
+.Carrusel{
+    height: 98vh;
+}
 
 }
 
 @media screen and (max-width: 950px) {
+    html{
+        font-size: 25px;
+    }
     header nav a {
-        font-size: 3.5rem;
+        font-size: 4.2rem;
     }
 
     /* Inicio*/
@@ -376,24 +400,27 @@ header img,
     }
 
     .Carrusel{
-        height: 35vh;
+        height: 40vh;
     }
     .Carrusel img {
         max-width: 100%;
-        height: 30vh;
+        height: 50vh;
     }
     .Carrusel .slider{
         max-width: 80%;
-        height: 35vh;
+        height: 30vh;
     }
     .Carrusel .nav-m, .Carrusel .nav-auto{
         width: 88%;
     }
+    .Carrusel .nav-m{
+        margin-top: -31.25rem;
+    }
     .Carrusel .nav-auto{
-        margin-top: 27.5vh;
+        margin-top: 40rem;
     }
     .Carrusel .slide{
-        height: 31vh;
+        height: 50vh;
     }
     .Carrusel .st {
         flex: 0 0 auto;
@@ -402,35 +429,70 @@ header img,
         font-size: 3.3rem;
         top:20vh;
     }
+    .Carrusel .nav-auto div {
+        padding: 0.7rem;
+    }
+    .Carrusel .nav-m .m-btn{
+        padding: 0.7rem;
+    }
    
 }
-
+@media screen and (max-width: 854px){
+    html{
+        font-size: 23px;
+    }
+    .contenedor-imagen-frase {
+        height: 29vh;
+    }
+    .contenedor-imagen-frase img {
+        height: 28vh;
+    }
+    .Carrusel{
+        height: 67rem;
+    }
+    .Carrusel .nav-m {
+        margin-top: -26.7rem;
+    }
+    .Carrusel .slider{
+        height: 36vh;
+    }
+}
+@media screen and (max-width: 821px){
+    .Carrusel .nav-m{
+        margin-top: -21.5rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .Carrusel .nav-m{
+        margin-top: -18.5rem;
+    }
+    .Carrusel .nav-auto{
+        margin-top: 32.5vh;
+    }
+}
 @media screen and (max-width: 540px){
     header nav a{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
-
     #Inicio .frase {
-        font-size: 4rem;
+        font-size: 4.2rem;
     }
     .contenedor-imagen-frase {
         width: 100%;  /*Ancho deseado del contenedor*/
-        height: 53vh;
+        height: 44vh;
     }
     .contenedor-imagen-frase img {
         width: 100%;
-        height: 46vh;
+        height: 44vh;
         object-fit: cover;
     }
-
     .Carrusel{
-        height:63vh;
+        height:64vh;
     }
     .Carrusel img {
-        height: 49vh;
+        height: 52vh;
     }
     .Carrusel .slider{
-        max-width: 80%;
         height: 50vh;
     }
     .Carrusel .slide{
@@ -439,27 +501,88 @@ header img,
     .Carrusel .nav-auto{
         margin-top: 46.5vh;
     }
+    .Carrusel .nav-m{
+        margin-top: -4rem;
+    }
     .Carrusel .texto {
         font-size: 2.3rem;
         top: 38vh;
     }
 }
-
 @media screen and (max-width: 430px){
     #Inicio .frase {
         font-size: 3.5rem;
     }
+    .contenedor-imagen-frase {
+        height: 36vh;
+    }
+    .contenedor-imagen-frase img {
+        height: 36vh;
+    }
+    .Carrusel {
+        height: 69vh;
+    }
+    .Carrusel .texto {
+        font-size: 2.6rem;
+        top: 35vh;
+    }
+    .Carrusel .slider{
+        height: 51vh;
+    }
     .Carrusel .slide{
         height: 51vh;
     }
+    .Carrusel img {
+        height: 51vh;
+    }
+    .Carrusel .nav-m{
+        margin-top: -4.5rem;
+    }
 }
-
+@media screen and (max-width: 414px){
+    .Carrusel .nav-m {
+        margin-top: -4rem;
+    }
+    .Carrusel .texto {
+        font-size: 2.8rem;
+        top: 32vh;
+    }
+}
+@media screen and (max-width: 412px){
+    .Carrusel {
+        height: 70vh;
+    }
+}
 @media screen and (max-width: 390px){
+    #Inicio .frase {
+        font-size: 3.3rem;
+    }
+    .Carrusel .nav-m{
+        margin-top: -3.9rem;
+    }
+}
+@media screen and (max-width: 375px){
+    #Inicio .frase {
+        font-size: 3.1rem;
+    }
+    .Carrusel {
+        height: 77vh;
+    }
+    .Carrusel .nav-m{
+        margin-top: -3rem;
+    }
+    .Carrusel .texto {
+        top: 29vh;
+    }
+}
+@media screen and (max-width: 360px){
     #Inicio .frase {
         font-size: 3rem;
     }
+    .Carrusel .nav-m{
+        margin-top: -3.3rem;
+    }
 }
-
 @media screen and (max-width: 280px){
     header nav a{
         font-size: 1.5rem;
@@ -467,25 +590,34 @@ header img,
     .contenedor-imagen-frase {
         padding-top: 5rem;
     }
+    .contenedor-imagen-frase img{
+        height: 25vh;
+    }
     #Inicio .frase {
         font-size: 2.3rem;
     }
 
     .Carrusel{
-        height:64vh;
+        height:73vh;
+    }
+    .Carrusel img {
+        height: 55vh;
     }
     .Carrusel .slider {
         max-width: 80%;
-        height: 42vh;
+        height: 55vh;
     }
     .Carrusel .slide {
-        height: 42vh;
+        height: 62vh;
+    }
+    .Carrusel .nav-m{
+        margin-top: -7.5rem;
     }
     .Carrusel .nav-auto {
-        margin-top: 35.7vh;
+        margin-top: 50.7vh;
     }
     .Carrusel .texto {
-        font-size: 2rem;
-        top: 22vh;
+        font-size: 2.2rem;
+        top: 34vh;
     }
 }

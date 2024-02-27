@@ -2,19 +2,38 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
-'''class Cliente(models.Model):
-    usuario=models.OneToOneField(User,null=True,blank=True,on_delete=models.CASCADE)
-    nombre=models.CharField(max_length=200, null=True)
-    email=models.CharField(max_length=200)
+'''class FraseInicio(models.Model):
+    '''
 
-    def __str__(self):
-        return self.nombre'''
+'''class QuienesSomos(models.Model):
+    titulo_columna=models.CharField(max_length=100)
+    texto_columna=models.CharField(default='Texto de columna de sección Quiénes somos', max_length=500)
+    imagen_columna=models.ImageField(null=True, blank=True)
+
+        @property
+    def imagenURL(self):
+        try:
+            url=self.imagen_columna.url
+        except:
+            url=''
+        return url'''
+
+'''class Carrusel(models.Model):
+    imagen_carrusel=models.ImageField(null=True, blank=True)
+    frase_carrusel=models.CharField(default='Frase de imagen del carrusel', max_length=100)
+
+        @property
+    def imagenURL(self):
+        try:
+            url=self.imagen_carrusel.url
+        except:
+            url=''
+        return url'''
     
 class Producto(models.Model):
     nombre=models.CharField(max_length=200)
     descripcion=models.CharField(default='Descripción del producto', max_length=500)
     precio=models.FloatField()
-    digital=models.BooleanField(default=False, null=True, blank=True)
     imagen=models.ImageField(null=True, blank=True)
 
     def __str__(self):

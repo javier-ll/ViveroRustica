@@ -12,7 +12,7 @@
    text-decoration: none;
    transition: all .2s linear;
    text-transform: capitalize;
-   background-color: rgb(158, 181, 162);
+   background-color: #B2BD7E;
    max-width: 100%;
    margin:0 auto;
    padding:3rem 0;
@@ -24,7 +24,7 @@
    color: whitesmoke;
    margin-bottom: 3rem;
    text-align: center;
-   background-color: rgb(76, 29, 62);
+   background-color: #6A5D7B;
    display: table;
    width: 100%;
    padding: 2%;
@@ -42,16 +42,16 @@
 #Productos .products-container .product{
    text-align: center;
    padding:3rem 2rem;
-   background: #fff;
+   background: whitesmoke;
    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-   outline: .1rem solid #ccc;
+   outline: .1rem solid #6A5D7B;
    outline-offset: -1.5rem;
    cursor: pointer;
    height: 22rem;
 }
 
 #Productos .products-container .product:hover{
-   outline: .2rem solid rgb(76, 29, 62);
+   outline: .2rem solid #5D4A66;
    outline-offset: 0;
 }
 
@@ -71,16 +71,16 @@
 #Productos .products-container .product h3{
    padding:.5rem 0;
    font-size: 1.4rem;
-   color:#631251;
+   color:#6A5D7B;
 }
 
 #Productos .products-container .product:hover h3{
-   color:rgb(76, 29, 62);
+   color:#6A5D7B;
 }
 
 #Productos .products-container .product .price{
    font-size: 1.4rem;
-   color:#631251;
+   color:#6A5D7B;
 }
 
 #Productos .products-preview{
@@ -99,7 +99,7 @@
    display: none;
    padding:0.7rem;
    text-align: center;
-   background: #fff;
+   background: whitesmoke;
    position: relative;
    margin:2rem;
    width: 36rem;
@@ -117,7 +117,7 @@
    position: absolute;
    top:1rem; right:1.5rem;
    cursor: pointer;
-   color:#631251;
+   color:#6A5D7B;
    font-size: 4rem;
 }
 
@@ -126,7 +126,7 @@
 }
 
 #Productos .products-preview .preview h3{
-   color:#631251;
+   color:#6A5D7B;
    padding:.5rem 0;
    font-size: 1.5rem;
 }
@@ -135,13 +135,13 @@
    line-height: 1.5;
    padding:.1rem 0;
    font-size: 1.1rem;
-   color:#631251;
+   color:#6A5D7B;
 }
 
 #Productos .products-preview .preview .price{
    padding:.1rem 0;
    font-size: 1.5rem;
-   color:#631251;
+   color:#6A5D7B;
 }
 
 @media screen and (max-width:1024px){
@@ -167,16 +167,16 @@
 @media screen and (max-width:1024px) and (max-height:1366px){
       /*Producto seleccionado*/
       #Productos .products-preview .preview.active img {
-         height: 18rem;
+         height: 9rem;
      }
       #Productos .products-preview .preview.active h3{
-         font-size: 3.5rem;
+         font-size: 2.5rem;
       }
       #Productos .products-preview .preview.active .price{
-         font-size: 3rem;
+         font-size: 2rem;
       }
       #Productos .products-preview .preview.active p{
-         font-size: 2.2rem;
+         font-size: 1.5rem;
       }
 
    }
@@ -220,7 +220,7 @@
       font-size: 4.5rem;
    }
    #Productos .products-preview .preview.active p{
-      font-size: 4rem;
+      font-size: 3.5rem;
    }
 
 }
@@ -255,6 +255,9 @@
 }
 
 @media screen and (max-width:540px){
+   #Productos #titulo_productos{
+      font-size: 3rem;
+   }
    #Productos .products-preview .preview.active h3{
       font-size: 2.7rem;
    }

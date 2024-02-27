@@ -8,7 +8,7 @@
     font-size: 1rem;
     font-family: 'Kanit', sans-serif;
     display: flex;
-    background-color: rgb(158, 181, 162);
+    background-color: #B2BD7E;
     position: relative;
 }
 
@@ -23,7 +23,7 @@
 }
 
 #titulo_contacto {
-    background-color: rgb(76, 29, 62);
+    background-color: #6A5D7B;
     display: table;
     font-size:  2.5rem;
     color: whitesmoke;
@@ -58,13 +58,16 @@
 }
 
 .form-label {
-    color:rgb(0, 0, 0);
+    color:#6A5D7B;
+}
+.form-control{
+    color: #6A5D7B;
 }
 .btn-primary {
     width: 12.5rem; /* 200px */
     height: 2.5rem; /* 40px */
-    background-color: rgb(76, 29, 62);
-    border: 1px solid rgb(12, 11, 11);
+    background-color: #6A5D7B;
+    border: 1px solid #5D4A66;
     border-radius: 0.3125rem; /* 5px */
     color: white;
     font-size: 1rem;
@@ -77,7 +80,7 @@
     padding-top: 0;
     height: 100%;
     width: 100%;
-    background-color: rgb(76, 29, 62);
+    background-color: #6A5D7B;
     overflow: visible;
     position: relative;
     padding: 0 0 1rem 0;
@@ -93,7 +96,7 @@
 .redes {
     display: inline-block;
     position: relative;
-    color: rgb(247, 201, 239);
+    color: rgb(233, 233, 233);
     width: 50%;
     height: 45vh;
     text-align: center;
@@ -120,18 +123,28 @@
 }
 
 .faceins {
-    color: rgb(247, 201, 239);
+    color: rgb(233, 233, 233);
     text-decoration: none;
 }
 
-.redes2:hover, a:hover {
-    color: rgb(233, 233, 233);
+.redes2:hover, .redes2 a:hover {
+    color: #E9D985;
 }
 
 /* Cambios en font-size para distintos tamaños de pantalla */
+@media (min-height: 1360px) and (max-width: 1024px){
+    #Contacto .imagen-cont {
+        left: 35.2rem;
+    }
+    .logoimg{
+        width: 18.2rem;
+        top: 1rem;
+        left: 1rem;
+    }
+}
 @media screen and (max-width: 1024px){
     #titulo_contacto{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
     #Contacto .container{
         width: 67%;
@@ -168,7 +181,7 @@
 }
  @media screen and (max-width: 1000px) {
     #Contacto h1{
-        font-size: 4.5rem;
+        font-size: 5.5rem;
     }
     #Contacto .formulario{
         height: 42vh;
@@ -252,6 +265,9 @@
 }
 
  @media screen and (max-width: 665px) {
+    #titulo_contacto{
+        font-size: 3rem;
+    }
     #Contacto .formulario {
         height: 53vh;
     }
