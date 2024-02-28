@@ -19,51 +19,85 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Carrusel
-var counter = 1;
-var maxImages = 3;
-//var maxImages = document.querySelectorAll('.slide .st').length; // Obtener la cantidad de imágenes dinámicamente
-var intervalTime = 4000;
-var isManual = false;
-var intervalId;
+document.addEventListener('DOMContentLoaded', function() {
+    var maxImages = document.querySelectorAll('.slide .st').length; // Obtener la cantidad de imágenes dinámicamente
+    var counter = 1;
+    var intervalTime = 4000;
+    var intervalId;
 
-function autoNavigation(manualCounter) {
-    if (manualCounter !== null) {
-        counter = manualCounter;
-    } else {
+    function autoNavigation() {
         counter++;
         if (counter > maxImages) {
             counter = 1;
         }
+        console.log("contador automático ",counter)
+        navigate(counter, false); // Llamamos a navigate con isManual = false
     }
-    document.getElementById('radio' + counter).checked = true;
-}
 
-function manualNavigation(imageNumber) {
-    isManual = true;
-    manualCounter = imageNumber; // Actualiza el contador manual
-    counter = imageNumber; // Actualiza el contador principal
-    clearInterval(intervalId); // Detiene la navegación automática al hacer clic en un botón manual
-    document.getElementById('radio' + counter).checked = true;
-}
+    function manualNavigation(imageNumber) {
+        console.log("Navegación manual a la imagen número:", imageNumber);
+        clearInterval(intervalId); // Detener la navegación automática
+        navigate(imageNumber, true); // Llamamos a navigate con isManual = true
+        startAutoNavigation(); // Reiniciar la navegación automática desde la imagen seleccionada manualmente
+    }
 
-function startAutoNavigation() {
-    intervalId = setInterval(autoNavigation, intervalTime);
-}
+    function startAutoNavigation() {
+        clearInterval(intervalId); // Limpiar el intervalo existente antes de iniciar uno nuevo
+        intervalId = setInterval(autoNavigation, intervalTime);
+    }
 
-// Iniciar la navegación automática al cargar la página
-startAutoNavigation();
+    function navigate(imageNumber, isManual) {
+        counter = imageNumber;
+        var radioElement = document.getElementById('radio' + counter);
+        if (radioElement) {
+            radioElement.checked = true;
+        } else {
+            console.error("Radio element not found for counter:", counter);
+        }
+        if (!isManual) { // Verificamos si la navegación es manual
+            startAutoNavigation(); // Reiniciar la navegación automática si no es manual
+        }
+    }
 
-// Event listener para los botones de navegación manual
-document.querySelectorAll('.m-btn').forEach(function(btn, index) {
-    btn.addEventListener('click', function() {
-        manualNavigation(index + 1);
+    document.getElementById('radio1').checked = true;
+    startAutoNavigation();
+
+    document.querySelectorAll('.m-btn').forEach(function(btn, index) {
+        btn.addEventListener('click', function() {
+            manualNavigation(index + 1);
+        });
+    });
+
+    document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+        radio.addEventListener('click', function() {
+            clearInterval(intervalId);
+            startAutoNavigation();
+        });
     });
 });
 
-// Event listener para restablecer el modo automático cuando se selecciona una imagen manualmente
-document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
-    radio.addEventListener('click', function() {
-        isManual = false;
-        startAutoNavigation(); // Restablecer la navegación automática después de seleccionar una imagen manualmente
-    });
+window.addEventListener('DOMContentLoaded', function() {
+    var imagenesCantidad = document.querySelectorAll('.slide .st').length;
+    var styles = '';
+
+    for (var i = 1; i <= imagenesCantidad; i++) {
+        var marginLeft = (i - 1) * -20; // Ajusta esto según tus necesidades
+
+        styles += `
+            #radio${i}:checked ~ .first {
+                margin-left: ${marginLeft}%;
+            }
+        `;
+
+        // Opcional: estilos para los botones de navegación automática
+         styles += `
+             #radio${i}:checked ~ .nav-auto .a-b${i} {
+                 background-color: #749C75;
+             }
+        `;
+    }
+
+    var styleElement = document.createElement('style');
+    styleElement.textContent = styles;
+    document.head.appendChild(styleElement);
 });

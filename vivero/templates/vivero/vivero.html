@@ -31,72 +31,37 @@
         </div>
     </header>
     <section id="Inicio">
-      <div class="contenedor-imagen-frase">
-        <img src="{% static 'imagenes/frase.jpg' %}" alt="vivero_carrusel">
-        <div class="frase">La naturaleza es el mejor diseño</div>
-      </div>
-      <section class="Carrusel">
-          <div class="slider">
-              <div class="slide">
-                  <input type="radio" name="radio-btn" id="radio1">
-                  <input type="radio" name="radio-btn" id="radio2">
-                  <input type="radio" name="radio-btn" id="radio3">
-
-                  <div class="st first">
-                      <img src="{% static 'imagenes/carrusel1.jpg' %}" alt="Imagen 1 del carrusel">
-                      <div class="texto" id="texto1">Revalorizamos la flora nativa</div>
-                  </div>
-                  <div class="st">
-                      <img src="{% static 'imagenes/carrusel2.jpg' %}" alt="Imagen 2 del carrusel">
-                      <div class="texto">Fomentamos un trabajo horizontal y autogestivo</div>
-                  </div>
-                  <div class="st">
-                      <img src="{% static 'imagenes/grindelia_chiloensis_p4178.jpg' %}" alt="Imagen 3 del carrusel">
-                      <div class="texto">Promovemos la educación ambiental a través de actividades y talleres</div>
-                  </div>
-                  <div class="st">
-                      <img src="{% static 'imagenes/plantas.jpg' %}" alt="">
-                      <div class="texto">Establecemos colaboraciones con diversas entidades y actores locales</div>
-                  </div>
-                  <div class="nav-auto">
-                      <div class="a-b1"></div>
-                      <div class="a-b2"></div>
-                      <div class="a-b3"></div>
-                  </div>
-              </div>
-
-              <div class="nav-m">
-                  <label for="radio1" class="m-btn"></label>
-                  <label for="radio2" class="m-btn"></label>
-                  <label for="radio3" class="m-btn"></label>
-              </div>
-          </div>
-      </section>
+        <div class="contenedor-imagen-frase">
+            <img src="{% static 'imagenes/frase.jpg' %}" alt="vivero_carrusel">
+            <div class="frase">La naturaleza es el mejor diseño</div>
+        </div>
+        <section class="Carrusel">
+            <div class="slider">
+                <div class="slide">
+                    {% for carrusel in imagenes_carrusel %}
+                    <input type="radio" name="radio-btn" id="radio{{ forloop.counter }}">
+                    {% endfor %}
+                    {% for carrusel in imagenes_carrusel %}
+                    <div class="st {% if forloop.first %}first{% endif %}">
+                        <img src="{{ carrusel.imagenURL }}" alt="Imagen del carrusel">
+                        <div class="texto">{{ carrusel.frase_carrusel }}</div>
+                    </div>
+                    {% endfor %}
+                    <div class="nav-auto">
+                        {% for carrusel in imagenes_carrusel %}
+                        <div class="a-b{{ forloop.counter }}"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="nav-m">
+                    {% for carrusel in imagenes_carrusel %}
+                    <label for="radio{{ forloop.counter }}" class="m-btn"></label>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     </section>
-    <!--<section class="Carrusel">
-    <div class="slider">
-        <div class="slide">
-            {% for carrusel in imagenes_carrusel %}
-            <input type="radio" name="radio-btn" id="radio{{ forloop.counter }}">
-            <div class="st {% if forloop.first %}first{% endif %}">
-                <img src="{{ carrusel.imagenURL }}" alt="Imagen del carrusel">
-                <div class="texto">{{ carrusel.frase_carrusel }}</div>
-            </div>
-            {% endfor %}
-            <div class="nav-auto">
-                {% for carrusel in imagenes_carrusel %}
-                <div class="a-b{{ forloop.counter }}"></div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="nav-m">
-            {% for carrusel in imagenes_carrusel %}
-            <label for="radio{{ forloop.counter }}" class="m-btn"></label>
-            {% endfor %}
-        </div>
-    </div>
-</section>
--->
+
     <section id="Productos">
 
         <h1 id="titulo_productos">Productos</h1>
@@ -123,40 +88,19 @@
         </div>
         
       </section>
-    
+      
     <section id="Quienes_somos">
-        <!-- Contenido de la sección "Quiénes Somos" -->
         <h1>Quiénes Somos</h1>
         <div class="container">
+            {% for subseccion in columnas_quienes %}
             <div class="columna">
-                <h2>Nuestra Historia</h2>       
-                <!-- Contenido de "¿Por qué RÚSTICA?" -->
-                <p>RUSTICA Vivero de Montaña tuvo sus inicios a principios de 2021 y surge de la mano del colectivo Sumá Nativas, quienes tienen como objetivo principal desarrollar e implementar un programa de restauración en áreas degradadas en la Cuenca Alta del Río Mendoza. Proyecto que a raíz de un devastador incendio ocurrido en 2019, acerca esta iniciativa de creación de un vivero de flora nativa en Potrerillos. Por lo tanto, el Vivero Rústica es el fruto de trabajo conjunto y la colaboración de vecinos y vecinas de Potrerillos.</p>
-                                <!-- Más contenido... -->
-                <img class="image" src="{% static 'imagenes/5vivero.jpg' %}" alt="Dueñas del vivero"> 
+                <h2>{{ subseccion.titulo_columna }}</h2>
+                <p>{{ subseccion.texto_columna }}</p>
+                <img class="image" src="{{ subseccion.imagenURL }}" alt="{{ subseccion.titulo_columna }}">
             </div>
-
-            <div class="columna">
-                <img class="image" src="{% static 'imagenes/plantas.jpg' %}" alt="Plantas">               
-                <!-- Contenido de "Nuestra Historia" -->
-                <h2>¿Por qué RÚSTICA?</h2>
-                <p>Después de mucho reflexionar y debatir entre mates, llegamos a la conclusión de que este nombre refleja perfectamente nuestra pasión por las plantas autóctonas y el encanto rústico de la naturaleza y el espacio que habitamos.</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
-    <!--<section id="Quienes_somos">
-    <h1>Quiénes Somos</h1>
-    <div class="container">
-        {% for subseccion in columnas_quienes %}
-        <div class="columna">
-            <img class="image" src="{{ subseccion.imagenURL }}" alt="{{ subseccion.titulo_columna }}">
-            <h2>{{ subseccion.titulo_columna }}</h2>
-            <p>{{ subseccion.texto_columna }}</p>
-        </div>
-        {% endfor %}
-    </div>
-</section>
--->
 
     <h1 id="titulo_contacto"> Contacto </h1>
     <section id="Contacto">

@@ -197,15 +197,6 @@ header img,
 .m-btn:hover{
     background-color: #749C75;
 }
-#radio1:checked ~.first{
-    margin-left: 0;
-}
-#radio2:checked ~.first{
-    margin-left: -20%;
-}
-#radio3:checked ~.first{
-    margin-left: -40%;
-}
 .Carrusel .nav-auto{
     position: absolute;
     width: 800px;
@@ -222,15 +213,6 @@ header img,
 .Carrusel .nav-auto div:not(:last-child){
     margin-right: 30px;
     justify-content: center;
-}
-#radio1:checked ~.nav-auto .a-b1{
-    background-color: #749C75;
-}
-#radio2:checked ~.nav-auto .a-b2{
-    background-color: #749C75;
-}
-#radio3:checked ~.nav-auto .a-b3{
-    background-color: #749C75;
 }
 
 @media screen and (max-width: 1280px) {
@@ -249,6 +231,10 @@ header img,
     .Carrusel .nav-auto {
         margin-top: 57.5vh;
     }
+    .Carrusel .texto {
+        top: 70%;
+    }
+    
 }
 @media (min-height: 1360px) and (max-width: 1024px) {
       header nav a{
