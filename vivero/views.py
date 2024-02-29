@@ -2,7 +2,11 @@ from django.shortcuts import render
 from .models import *
 
 def vivero(request):
-	frase_inicio=FraseInicio.objects.all()
+	frase_inicio=FraseInicio.objects.first()
+	# Si no hay ninguna instancia de FraseInicio, crear una con valores predeterminados
+	if not frase_inicio:
+		frase_inicio = FraseInicio.objects.create(frase='Frase principal predeterminada')
+		   
 	productos=Producto.objects.all()
 	columnas_quienes=QuienesSomos.objects.all()
 	imagenes_carrusel=Carrusel.objects.all()

@@ -153,20 +153,21 @@
         height: auto;
     }
     #Contacto .form-control {
-        height:4vh;
+        height:6vh;
         font-size: 1.4rem;
     }
     #Contacto .form-label {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
     #Contacto .btn-primary {
-        width: 14.5rem;
-        height: 4.5rem;
-        font-size: 2.8rem;
+        width: 10.5rem;
+        height: 3.5rem;
+        font-size: 2rem;
     }
     #Contacto .imagen-cont{
-        width:33%;
-        top: 12rem;
+        width:43%;
+        left: 102%;
+        top: 8rem;
     }
 
     .redes{
@@ -176,7 +177,7 @@
         height: 25vh;
     }
     .logoimg{
-        width: 19.2rem;
+        width: 18.2rem;
     }
 }
  @media screen and (max-width: 1000px) {
