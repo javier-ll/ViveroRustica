@@ -2,8 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
-'''class FraseInicio(models.Model):
-    '''
+class FraseInicio(models.Model):
+    frase=models.CharField(default='Frase principal', max_length=50)
+    imagen_inicio=models.ImageField(null=True, blank=True)
+    @property
+    def imagenURL(self):
+        try:
+            url=self.imagen_inicio.url
+        except:
+            url=''
+        return url
 
 class QuienesSomos(models.Model):
     titulo_columna=models.CharField(max_length=100)

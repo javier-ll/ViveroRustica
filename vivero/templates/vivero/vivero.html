@@ -32,8 +32,8 @@
     </header>
     <section id="Inicio">
         <div class="contenedor-imagen-frase">
-            <img src="{% static 'imagenes/frase.jpg' %}" alt="vivero_carrusel">
-            <div class="frase">La naturaleza es el mejor diseño</div>
+            <img src="{{ frase_inicio.imagenURL }}" alt="Imagen de la frase principal">
+            <div class="frase">{{frase_inicio.frase}}</div>
         </div>
         <section class="Carrusel">
             <div class="slider">
