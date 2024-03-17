@@ -30,12 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (counter > maxImages) {
             counter = 1;
         }
-        console.log("contador automático ",counter)
         navigate(counter, false); // Llamamos a navigate con isManual = false
     }
 
     function manualNavigation(imageNumber) {
-        console.log("Navegación manual a la imagen número:", imageNumber);
         clearInterval(intervalId); // Detener la navegación automática
         navigate(imageNumber, true); // Llamamos a navigate con isManual = true
         startAutoNavigation(); // Reiniciar la navegación automática desde la imagen seleccionada manualmente
@@ -76,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 window.addEventListener('DOMContentLoaded', function() {
     var imagenesCantidad = document.querySelectorAll('.slide .st').length;
     var styles = '';
@@ -92,7 +91,7 @@ window.addEventListener('DOMContentLoaded', function() {
         // Opcional: estilos para los botones de navegación automática
          styles += `
              #radio${i}:checked ~ .nav-auto .a-b${i} {
-                 background-color: #749C75;
+                 background-color: ${hover_carrusel};
              }
         `;
     }

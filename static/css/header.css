@@ -6,12 +6,14 @@ body {
     font-weight: 530;
     align-items: center;
 }
+#colores{
+    display: none;
+}
 
 /* Header */
 header {
     width: 100%;
     overflow: hidden;
-    background:#5D4A66;
     position: relative;
     z-index: 1;
     transition: height ease 0.5s; 
@@ -272,19 +274,9 @@ header img,
 }
 
 @media only screen and (max-width: 1000px) {
-    /* Estilo general del header */
-header {
-    width: 100%;
-    overflow: hidden;
-    background: #5D4A66;
-    position: relative;
-    z-index: 1;
-    transition: height ease 0.5s; 
-}
 
 /* Estilo del logo */
 header .logo {
-    color: #f2f2f2;
     font-size: 3.125rem;
     display: inline-block;
     max-width: 90%; /* Ajuste para dispositivos móviles */
@@ -313,7 +305,6 @@ header nav {
 header nav a {
     display: inline-block; /* Convertir a bloques para ocupar el ancho completo */
     margin-right: 10px;
-    color: #fff;
     text-decoration: none;
     padding: 0.625rem 0; /* Ajustar el relleno en dispositivos móviles */
     font-size: 1.5rem;
@@ -323,7 +314,6 @@ header nav a {
 
 /* Estilo al pasar el mouse sobre los enlaces de navegación */
 header nav a:hover {
-    background: #749C75;
     border-radius: 0; /* Eliminar el borde redondeado en dispositivos móviles */
 }
 

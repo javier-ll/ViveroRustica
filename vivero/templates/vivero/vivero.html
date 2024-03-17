@@ -20,7 +20,9 @@
     <header>
         <div class="wrapper">
             <div class="logo">
-                <img class="imagen-logo" src="{% static 'imagenes/vivero_logo_header.jpg' %}" alt="Logo de vivero">
+                {% for logo in logos %}
+                <img class="imagen-logo" src="{{ logo.logo_header.url }}" alt="Logo de vivero">
+                {% endfor %}
             </div>
             <nav>
                 <a href="#Inicio">Inicio</a>
@@ -157,7 +159,9 @@
             </div>
 
             <div class="imagen-cont">
-                <img src="imagenes/vivero_logo2.jpg" alt="Logo del vivero">
+                {% for logo in logos %}
+                <img src="{{ logo.logo_form.url }}" alt="Logo del vivero">
+                {% endfor %}
             </div>
             <div id="result"></div>
         </form>
@@ -189,11 +193,31 @@
         </div>
 
         <div class="cajalogo">
-          <img class="logoimg" src="{% static 'imagenes/logoblanco.png' %}" alt="Logo blanco del vivero">
+            {% for logo in logos %}
+          <img class="logoimg" src="{{ logo.logo_footer.url }}" alt="Logo blanco del vivero">
+          {% endfor %}
         </div>
 
     </footer>
     <script src="{% static 'js/form.js' %}"></script>
     <script src="{% static 'js/productos.js' %}"></script>
+    <script src="{% static 'js/colores.js' %}"></script>
 </body>
+<div id="colorFondos" style="display: none;">{{ colores.color_fondos }}</div>
+<div id="hover_header" style="display: none;">{{ colores.hover_header }}</div>
+<div id="hover_carrusel" style="display: none;">{{ colores.hover_carrusel }}</div>
+<div id="hover_productos" style="display: none;">{{ colores.hover_productos }}</div>
+<div id="hover_redes" style="display: none;">{{ colores.hover_redes }}</div>
+<div id="header_texto_botones" style="display: none;">{{ colores.header_texto_botones }}</div>
+<div id="fondo_header" style="display: none;">{{ colores.fondo_header }}</div>
+<div id="fondo_secciones" style="display: none;">{{ colores.fondo_secciones }}</div>
+<div id="frase_principal" style="display: none;">{{ colores.frase_principal }}</div>
+<div id="carrusel_fondo_texto" style="display: none;">{{ colores.carrusel_fondo_texto }}</div>
+<div id="carrusel_texto" style="display: none;">{{ colores.carrusel_texto }}</div>
+<div id="titulos_secciones" style="display: none;">{{ colores.titulos_secciones }}</div>
+<div id="productos_quienes_form_texto_detalles" style="display: none;">{{ colores.productos_quienes_form_texto_detalles }}</div>
+<div id="productos_fondo" style="display: none;">{{ colores.productos_fondo }}</div>
+<div id="form_boton" style="display: none;">{{ colores.form_boton }}</div>
+<div id="form_texto_boton" style="display: none;">{{ colores.form_texto_boton }}</div>
+<div id="footer_texto" style="display: none;">{{ colores.footer_texto }}</div>
 </html>

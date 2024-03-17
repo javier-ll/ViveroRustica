@@ -25,7 +25,7 @@ SECRET_KEY = 'z=9d96oex4sz7y&0%o(d3g$ae@%q%b2742o--1ur0&nbxtk$r$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'colorfield',
     'vivero.apps.ViveroConfig',
 ]
 
