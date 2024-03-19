@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 window.addEventListener('DOMContentLoaded', function() {
+    var hover_carrusel = document.getElementById("hover_carrusel").innerText;
     var imagenesCantidad = document.querySelectorAll('.slide .st').length;
     var styles = '';
 
