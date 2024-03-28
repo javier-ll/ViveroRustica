@@ -233,7 +233,7 @@
     }
     #Contacto .imagen-cont{
         width:72%;
-        left: 34vh;
+        left: 25vh;
     }
     .redes,.cajalogo{
         height: 27vh;
@@ -270,7 +270,7 @@
         font-size: 3rem;
     }
     #Contacto .formulario {
-        height: 53vh;
+        height: auto;
     }
     #Contacto .formulario .container{
         width: 95%;
@@ -301,47 +301,77 @@
         font-size: 2rem;
     }
     .redes,.cajalogo{
-        height: 50vh;
+        height: 46vh;
     }
     .cajalogo img {
         width: 22rem;
         height: 33vh;
     }
+    footer p{
+        width: 104%;
+    }
+    footer strong {
+        font-size: 1.5rem;
+    }
 
 }
 @media screen and (max-width: 430px) {
+    #Contacto {
+        padding-left: 2rem;
+    }
+    #Contacto .formulario form {
+        width: 86%;
+    }
+    #Contacto .formulario {
+        height: 70vh;
+    }
     #Contacto .form-label {
-        font-size: 2.5rem;
+        font-size: 1.7rem;
     }
     #Contacto .form-control {
         height: 4vh;
-        font-size: 1.8rem;
+        font-size: 0.98rem;
+    }
+    #Contacto .btn-primary {
+        width: 6.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
     }
     #Contacto .imagen-cont {
+        display: contents;
         top: 10vh;
         left: 22vh;
+    }
+    #Contacto .imagen-cont img {
+        width: 74%;
+        height: 26vh;
     }
 
     .redes{
         width: 40%;
     }
-    .redes strong{
-        font-size: 2rem;
-    }
-    .redes,.cajalogo{
-        height: 50vh;
+    .redes, .cajalogo {
+        height: 51vh;
+        padding-top: 3vh;
     }
     .cajalogo{
         width: 60%;
     }
     .cajalogo img {
-        width: 21rem;
-        height: 31vh;
-        left: 3rem;
+        width: 19.4rem;
+        height: 29vh;
+        left: 4.5rem;
+    }
+    footer p{
+        width: 158%;
     }
 }
 
 @media screen and (max-width: 414px) {
+    #Contacto .formulario form {
+        width: 91%;
+    }
     #Contacto .formulario .container{
         width: 95%;
         padding: 0;
@@ -359,16 +389,21 @@
     }
 
     .cajalogo img {
-        width: 20rem;
+        width: 13rem;
+        left: 10rem;
+        height: 21vh;
+    }
+    .redes strong {
+        font-size: 1.4rem;
+    }
+    .redes, .cajalogo {
+        height: 33vh;
     }
 }
 
 @media screen and (max-width: 412px) {
     * {
         font-size: 1.04rem;
-    }
-    #Contacto .formulario form {
-        width: 55%;
     }
     #Contacto .imagen-cont img{
         width: 16rem;
@@ -380,7 +415,7 @@
     }
     .redes,
     .cajalogo{
-        height: 24rem;
+        height: 34vh;
     }
     .redes i{
         font-size: 2.5rem;
@@ -391,28 +426,28 @@
     .cajalogo img {
         width: 19.9rem;
         height: 30rem;
-        top: 13rem;
+        top: 0rem;
+        left: 5rem;
     }
 }
 @media screen and (max-width: 390px){
-    #Contacto .imagen-cont img{
+    #Contacto .imagen-cont img {
         width: 16rem;
-        height: 27vh;
+        height: 23vh;
     }
     #Contacto .imagen-cont {
         left: 19.5rem;
         bottom: 69vh;
     }
 
-    .cajalogo img {
-        width: 19.9rem;
-        height: 30rem;
+    .redes, .cajalogo {
+        height: 36vh;
     }
 }
 
 @media screen and (max-width: 375px){
     #Contacto .formulario{
-        height: 50vh;
+        height: 79vh;
     }
     #Contacto .form-label {
         font-size: 1.5rem;
@@ -434,9 +469,8 @@
         width: 37%;
     }
     .cajalogo img {
-        left: 1rem;
-        width: 19.9rem;
-        height: auto;
+        left: 2rem;
+        height: 38vh;
     }
 }
 
@@ -452,9 +486,8 @@
         bottom: 67vh;
     }
 
-    .redes,
-    .cajalogo{
-        height: 20.8rem;
+    .redes, .cajalogo {
+        height: 40vh;
     }
     .cajalogo img {
         width: 19.7rem;
@@ -463,7 +496,7 @@
 
 @media screen and (max-width: 280px) {
     #Contacto .formulario {
-        height: 55vh;
+        height: 78vh;
     }
     #Contacto .imagen-cont img{
         width: 12rem;
@@ -482,12 +515,16 @@
     .form-label{
         font-size: 1.2rem;
     }
+    .redes, .cajalogo {
+        height: 36vh;
+    }
     .cajalogo{
         width: 30%;
     }
-    .cajalogo img{
-        width: 10.7rem;
-        height: 16rem;
+    .cajalogo img {
+        width: 9.38rem;
+        height: 13rem;
         top: 6rem;
+        left: 2.5rem;
     }
 } 

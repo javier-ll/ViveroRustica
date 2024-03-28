@@ -375,7 +375,7 @@ header img,
         flex: 0 0 auto;
       }
     .Carrusel .texto {
-        font-size: 3.3rem;
+        font-size: 2.5rem;
         top:20vh;
     }
     .Carrusel .nav-auto div {
@@ -420,11 +420,17 @@ header img,
         height:64vh;
     }
     .Carrusel .texto {
-        font-size: 2.3rem;
+        font-size: 2rem;
         top: 38vh;
+    }
+    .Carrusel .slider {
+        height: 69%;
     }
 }
 @media screen and (max-width: 430px){
+    header nav a{
+        font-size: 1.625rem;
+    }
     #Inicio .frase {
         font-size: 3.5rem;
     }
@@ -438,13 +444,16 @@ header img,
         height: 69vh;
     }
     .Carrusel .texto {
-        font-size: 2.6rem;
+        font-size: 2.3rem;
         top: 35vh;
+    }
+    .Carrusel .nav-auto div, .Carrusel .nav-m .m-btn{
+        padding: 0.6rem;
     }
 }
 @media screen and (max-width: 414px){
     .Carrusel .texto {
-        font-size: 2.8rem;
+        font-size: 2.3rem;
         top: 32vh;
     }
 }
@@ -452,10 +461,19 @@ header img,
     .Carrusel {
         height: 70vh;
     }
+    .Carrusel .texto {
+        font-size: 2rem;
+    }
 }
 @media screen and (max-width: 390px){
     #Inicio .frase {
         font-size: 3.3rem;
+    }
+    .Carrusel .nav-auto div, .Carrusel .nav-m .m-btn{
+        padding: 0.5rem;
+    }
+    .Carrusel .texto {
+        top: 38vh;
     }
 }
 @media screen and (max-width: 375px){
@@ -466,12 +484,15 @@ header img,
         height: 77vh;
     }
     .Carrusel .texto {
-        top: 29vh;
+        top: 42vh;
     }
 }
 @media screen and (max-width: 360px){
     #Inicio .frase {
         font-size: 3rem;
+    }
+    .Carrusel .texto {
+        font-size: 1.8rem;
     }
 }
 @media screen and (max-width: 280px){
@@ -495,7 +516,10 @@ header img,
         max-width: 80%;
     }
     .Carrusel .texto {
-        font-size: 2.2rem;
-        top: 34vh;
+        font-size: 1.6rem;
+        top: 39vh;
+    }
+    .Carrusel .nav-auto div, .Carrusel .nav-m .m-btn{
+        padding: 0.45rem;
     }
 }
